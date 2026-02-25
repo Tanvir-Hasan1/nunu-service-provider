@@ -4,82 +4,28 @@ import React from "react";
 import { Check, Eye, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const bookings = [
-  {
-    id: "#BK-1029",
-    customer: {
-      name: "Eleanor Shellstrop",
-      avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop",
-    },
-    date: "Feb 26, 2026",
-    time: "19:30 PM",
-    guests: 4,
-    service: "Dinner Table",
-    status: "Confirmed",
-    payment: "Unpaid",
-  },
-  {
-    id: "#BK-1030",
-    customer: {
-      name: "Julian Casablancas",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop",
-    },
-    date: "Feb 14, 2026",
-    time: "20:00 PM",
-    guests: 2,
-    service: "Spa Session",
-    status: "Pending",
-    payment: "Unpaid",
-  },
-  {
-    id: "#BK-1031",
-    customer: {
-      name: "Michael Scott",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop",
-    },
-    date: "Feb 20, 2026",
-    time: "18:15 PM",
-    guests: 8,
-    service: "Dinner Table",
-    status: "Confirmed",
-    payment: "Unpaid",
-  },
-  {
-    id: "#BK-1032",
-    customer: {
-      name: "Sarah Jenkins",
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop",
-    },
-    date: "Feb 25, 2026",
-    time: "12:30 PM",
-    guests: 1,
-    service: "Lunch Table",
-    status: "Cancelled",
-    payment: "Unpaid",
-  },
-  {
-    id: "#BK-1032",
-    customer: {
-      name: "Sarah Jenkins",
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop",
-    },
-    date: "Feb 25, 2026",
-    time: "12:30 PM",
-    guests: 1,
-    service: "Lunch Table",
-    status: "Complete",
-    payment: "Paid",
-  },
-];
+export interface Booking {
+  id: string;
+  customer: {
+    name: string;
+    avatar: string;
+  };
+  date: string;
+  time: string;
+  guests: number;
+  service: string;
+  status: string;
+  payment: string;
+}
 
-export function BookingsTable() {
+interface BookingsTableProps {
+  bookings: Booking[];
+  onViewDetails: (booking: Booking) => void;
+}
+
+export function BookingsTable({ bookings, onViewDetails }: BookingsTableProps) {
   return (
-    <div className="rounded-2xl bg-white p-8 shadow-sm border border-slate-100 mb-6 overflow-hidden">
+    <div className="rounded-2xl bg-white p-4 md:p-8 shadow-sm border border-slate-100 mb-6 overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
@@ -183,7 +129,10 @@ export function BookingsTable() {
                     <button className="h-8 w-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
                       <Check className="h-4 w-4" />
                     </button>
-                    <button className="h-8 w-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-sky-500 hover:text-white transition-all">
+                    <button
+                      onClick={() => onViewDetails(booking)}
+                      className="h-8 w-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-sky-500 hover:text-white transition-all"
+                    >
                       <Eye className="h-4 w-4" />
                     </button>
                     <button className="h-8 w-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-rose-500 hover:text-white transition-all">

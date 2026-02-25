@@ -3,10 +3,14 @@
 import React from "react";
 import { Bell } from "lucide-react";
 
-export function Header() {
+interface HeaderProps {
+  title?: string;
+}
+
+export function Header({ title = "Business Overview" }: HeaderProps) {
   return (
     <header className="flex h-24 items-center justify-between px-10 bg-white border-b border-slate-100">
-      <h2 className="text-3xl font-bold text-slate-800">Business Overview</h2>
+      <h2 className="text-3xl font-bold text-slate-800">{title}</h2>
 
       <div className="flex items-center space-x-6">
         <div className="relative cursor-pointer">

@@ -56,9 +56,9 @@ export function CalendarPreview() {
       </div>
 
       <div className="grid grid-cols-7 gap-1 text-center mb-4">
-        {days.map((d) => (
+        {days.map((d, i) => (
           <div
-            key={d}
+            key={i}
             className="text-[10px] font-semibold text-slate-400 py-1"
           >
             {d}
