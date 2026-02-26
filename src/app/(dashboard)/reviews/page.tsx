@@ -154,6 +154,18 @@ export default function ReviewsPage() {
               />
             </div>
 
+            <div className="relative">
+              <select className="appearance-none bg-slate-50 border border-slate-100 rounded-2xl py-3 px-6 pr-12 text-sm font-bold text-slate-600 focus:outline-none cursor-pointer hover:bg-slate-100/50 transition-colors">
+                <option>Star Rating: All</option>
+                <option>5 Stars</option>
+                <option>4 Stars</option>
+                <option>3 Stars</option>
+                <option>2 Stars</option>
+                <option>1 Star</option>
+              </select>
+              <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+            </div>
+
             <div className="flex items-center gap-2 p-1 bg-slate-50 rounded-2xl">
               <button
                 onClick={() => setActiveTab("all")}
@@ -191,18 +203,6 @@ export default function ReviewsPage() {
                   ●
                 </span>
               </button>
-            </div>
-
-            <div className="relative">
-              <select className="appearance-none bg-slate-50 border border-slate-100 rounded-2xl py-3 px-6 pr-12 text-sm font-bold text-slate-600 focus:outline-none cursor-pointer hover:bg-slate-100/50 transition-colors">
-                <option>Star Rating: All</option>
-                <option>5 Stars</option>
-                <option>4 Stars</option>
-                <option>3 Stars</option>
-                <option>2 Stars</option>
-                <option>1 Star</option>
-              </select>
-              <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
             </div>
           </div>
 

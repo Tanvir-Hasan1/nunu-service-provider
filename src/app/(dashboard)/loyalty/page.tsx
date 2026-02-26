@@ -7,6 +7,8 @@ import {
   Zap,
   Gift,
   Users,
+  History,
+  CircleDot,
   RotateCcw,
   Sparkles,
   ChevronDown,
@@ -21,22 +23,22 @@ const LOYALTY_STATS = [
     label: "TOTAL POINTS ISSUED",
     value: "1,284,500",
     trend: "+12%",
-    icon: RotateCcw,
-    color: "text-sky-500",
+    icon: CircleDot,
+    color: "text-[#1e2a5e]",
   },
   {
     label: "ACTIVE MEMBERS",
     value: "12,482",
     trend: "+8.4%",
     icon: Users,
-    color: "text-emerald-500",
+    color: "text-[#1e2a5e]",
   },
   {
     label: "REPEAT BOOKING RATE",
     value: "64.8%",
     trend: "+15.2%",
-    icon: RotateCcw,
-    color: "text-indigo-500",
+    icon: History,
+    color: "text-[#1e2a5e]",
   },
 ];
 
@@ -343,7 +345,7 @@ export default function LoyaltyPage() {
                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
                       {stat.label}
                     </p>
-                    <h3 className="text-3xl font-black text-slate-800 mt-2 tracking-tight">
+                    <h3 className="text-3xl font-black text-[#cca352] mt-2 tracking-tight">
                       {stat.value}
                     </h3>
                   </div>
