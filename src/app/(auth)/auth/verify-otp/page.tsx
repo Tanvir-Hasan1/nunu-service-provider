@@ -51,7 +51,9 @@ export default function VerifyCodePage() {
                 type="text"
                 maxLength={1}
                 value={digit}
-                ref={(el) => (inputRefs.current[i] = el)}
+                ref={(el) => {
+                  inputRefs.current[i] = el;
+                }}
                 onChange={(e) => handleChange(i, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(i, e)}
                 className="w-16 h-16 bg-white border-2 border-slate-100 rounded-2xl text-center text-2xl font-black text-slate-800 focus:outline-none focus:ring-4 focus:ring-[#1e2a5e]/5 focus:border-[#1e2a5e] transition-all"

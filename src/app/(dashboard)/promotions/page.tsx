@@ -130,8 +130,11 @@ const PLATFORM_CAMPAIGNS = [
 ];
 
 export default function PromotionsPage() {
-  const [campaignStates, setCampaignStates] = useState(
-    PLATFORM_CAMPAIGNS.reduce((acc, c) => ({ ...acc, [c.id]: c.isActive }), {}),
+  const [campaignStates, setCampaignStates] = useState<Record<string, boolean>>(
+    PLATFORM_CAMPAIGNS.reduce(
+      (acc, c) => ({ ...acc, [c.id]: c.isActive }),
+      {} as Record<string, boolean>,
+    ),
   );
 
   const toggleCampaign = (id: string) => {

@@ -9,7 +9,7 @@ import {
   Check,
   X,
   Plus,
-  FileText,
+  Waves,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +21,7 @@ interface UploadedFile {
   status: "ready" | "uploading";
 }
 
-export default function ServicesPage() {
+export default function SpaServicesPage() {
   const [menuFiles, setMenuFiles] = useState<UploadedFile[]>([]);
   const [galleryFiles, setGalleryFiles] = useState<UploadedFile[]>([]);
   const [isDraggingMenu, setIsDraggingMenu] = useState(false);
@@ -82,19 +82,22 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] flex flex-col">
-      <Header title="Restaurant / Services" />
+      <Header title="Spa / Services" />
 
       <main className="flex-1 p-6 md:p-10 pb-32">
         <div className="max-w-[1400px] mx-auto space-y-8">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-            {/* Menu Upload Card */}
+            {/* Spa Menu Upload Card */}
             <div className="bg-white rounded-[40px] p-10 shadow-sm border border-slate-100 flex flex-col">
               <div className="mb-8">
+                <div className="h-12 w-12 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-500 mb-4">
+                  <Waves className="h-6 w-6" />
+                </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-2">
-                  Menu Image Upload
+                  Spa Menu Upload
                 </h3>
                 <p className="text-sm text-slate-400">
-                  Upload clear photos or PDFs of your menu.
+                  Upload photos or PDFs of your spa treatments and packages.
                 </p>
               </div>
 
@@ -164,14 +167,17 @@ export default function ServicesPage() {
               )}
             </div>
 
-            {/* Gallery Upload Card */}
+            {/* Spa Gallery Upload Card */}
             <div className="bg-white rounded-[40px] p-10 shadow-sm border border-slate-100 flex flex-col">
               <div className="mb-8">
+                <div className="h-12 w-12 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-500 mb-4">
+                  <ImageIcon className="h-6 w-6" />
+                </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-2">
-                  Gallery Image Upload
+                  Spa Gallery Upload
                 </h3>
                 <p className="text-sm text-slate-400">
-                  Showcase your ambiance and signature dishes.
+                  Showcase your treatment rooms, pools, and relaxation areas.
                 </p>
               </div>
 
@@ -249,12 +255,12 @@ export default function ServicesPage() {
             </div>
             <div className="space-y-2">
               <h4 className="text-sm font-bold text-slate-800">
-                Upload Guidelines
+                Spa Upload Guidelines
               </h4>
               <p className="text-xs font-medium text-slate-400 leading-relaxed max-w-4xl">
-                For the best results, use images with at least 1920px width.
-                Avoid text-heavy photos for the gallery. Menu pages should be
-                high contrast for better OCR recognition.
+                Ensure spa treatment names are clearly visible on the menu.
+                Gallery photos should highlight the tranquility and cleanliness
+                of your facilities. Use calm, high-quality imagery.
               </p>
             </div>
           </div>

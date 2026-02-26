@@ -13,13 +13,22 @@ import {
   Star,
   Settings,
   LogOut,
+  Hotel,
+  Waves,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
-  { name: "Booking management", icon: CalendarRange, href: "/bookings" },
-  { name: "Menu / Services", icon: UtensilsCrossed, href: "/services" },
+  {
+    name: "Restaurant Bookings",
+    icon: UtensilsCrossed,
+    href: "/restaurant-bookings",
+  },
+  { name: "Hotel Bookings", icon: CalendarRange, href: "/hotel-bookings" },
+  { name: "Restaurant / Services", icon: UtensilsCrossed, href: "/services" },
+  { name: "Hotel / Services", icon: Hotel, href: "/hotel-services" },
+  { name: "Spa / Services", icon: Waves, href: "/spa-services" },
   { name: "Promotions", icon: Tag, href: "/promotions" },
   { name: "Analytics", icon: BarChart3, href: "/analytics" },
   { name: "Loyalty Program", icon: UserCircle2, href: "/loyalty" },

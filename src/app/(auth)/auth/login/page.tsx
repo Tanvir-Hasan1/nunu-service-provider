@@ -9,7 +9,26 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f3f4f6] flex items-center justify-center p-6">
+    <div className="min-h-screen bg-[#f3f4f6] flex flex-col items-center justify-center p-6">
+      <div className="w-full max-w-[480px] flex items-center justify-between mb-8 px-2">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 bg-[#1e2a5e] rounded-lg flex items-center justify-center">
+            <div className="h-4 w-4 bg-white rounded-sm transform rotate-45" />
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-sm font-medium text-slate-500">
+            Don't have an account?
+          </span>
+          <Link
+            href="/auth/register"
+            className="bg-[#1e2a5e] text-white px-6 py-2 rounded-xl text-sm font-bold shadow-lg shadow-[#1e2a5e]/20 hover:bg-[#1a2552] transition-all"
+          >
+            Register
+          </Link>
+        </div>
+      </div>
+
       <div className="w-full max-w-[480px] bg-white rounded-[32px] p-10 md:p-14 shadow-2xl shadow-slate-200/50 border border-slate-50">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">
